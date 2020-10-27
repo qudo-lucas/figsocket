@@ -79,12 +79,14 @@
     let preview = false;
     let endpoint = false;
 
+    const url = "https://fig-socket.vercel.app";
+
     const generateEndpoint = async () => {
         error = false;
         loading = true;
 
         try {
-            const response = await fetch(`/api/generate-endpoint?url=${encodeURIComponent(url)}`);
+            const response = await fetch(`${url}/api/generate-endpoint?url=${encodeURIComponent(url)}`);
 
             ({ endpoint } = await response.json());
             loading = false;
